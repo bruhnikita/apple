@@ -1,0 +1,1 @@
+﻿using Exam.Core; namespace Exam.Tests; public static class MaterialTests{public static void Run(){if(ListTools.RequiredPurchaseCost(2,10,4,3)!=6)throw new Exception("required purchase failed");if(ListTools.Page(new[]{1,2,3},2,2).Single()!=3)throw new Exception("paging failed");}}

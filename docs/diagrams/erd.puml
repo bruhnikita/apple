@@ -1,0 +1,9 @@
+﻿@startuml
+entity Material
+entity Type
+entity Product
+entity History
+Material }o--|| Type
+Material ||--o{ History
+Product }o--o{ Material
+@enduml

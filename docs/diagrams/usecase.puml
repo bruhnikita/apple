@@ -1,0 +1,9 @@
+﻿@startuml
+actor Operator
+rectangle "Bolshaya Pachka Materials" {
+Operator -- (View Material list)
+Operator -- (Search sort filter)
+Operator -- (Add edit delete)
+Operator -- (Mass update)
+}
+@enduml
