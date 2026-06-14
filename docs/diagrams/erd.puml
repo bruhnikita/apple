@@ -1,9 +1,50 @@
 ﻿@startuml
-entity Material
-entity Type
-entity Product
-entity History
-Material }o--|| Type
-Material ||--o{ History
-Product }o--o{ Material
+entity Material {
+  * ID : int
+  --
+  Title : nvarchar
+  CountInStock : float
+  MinCount : float
+  Cost : decimal
+  MaterialTypeID : int
+}
+entity MaterialType {
+  * ID : int
+  --
+  Title : nvarchar
+  DefectedPercent : float
+}
+entity Supplier {
+  * ID : int
+  --
+  Title : nvarchar
+  INN : varchar
+}
+entity MaterialSupplier {
+  * MaterialID : int
+  * SupplierID : int
+}
+entity MaterialCountHistory {
+  * ID : int
+  --
+  MaterialID : int
+  ChangeDate : datetime
+  CountValue : float
+}
+entity Product {
+  * ID : int
+  --
+  Title : nvarchar
+}
+entity ProductMaterial {
+  * ProductID : int
+  * MaterialID : int
+  Count : float
+}
+Material }o--|| MaterialType
+Material ||--o{ MaterialSupplier
+Supplier ||--o{ MaterialSupplier
+Material ||--o{ MaterialCountHistory
+Material ||--o{ ProductMaterial
+Product ||--o{ ProductMaterial
 @enduml

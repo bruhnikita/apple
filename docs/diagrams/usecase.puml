@@ -1,9 +1,16 @@
 ﻿@startuml
+left to right direction
 actor Operator
-rectangle "Bolshaya Pachka Materials" {
-Operator -- (View Material list)
-Operator -- (Search sort filter)
-Operator -- (Add edit delete)
-Operator -- (Mass update)
+rectangle "Materials application" {
+  Operator -- (View materials)
+  Operator -- (Search by title and description)
+  Operator -- (Sort by title, stock, cost)
+  Operator -- (Filter by material type)
+  Operator -- (Add material)
+  Operator -- (Edit material and suppliers)
+  Operator -- (Replace material image)
+  Operator -- (Bulk update minimum count)
+  Operator -- (Calculate required purchase cost)
+  Operator -- (Delete with dependency rules)
 }
 @enduml

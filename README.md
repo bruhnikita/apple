@@ -1,6 +1,14 @@
-﻿# Bolshaya Pachka Materials
+﻿# Apple
 
-Clean KOD 1.4 WPF exam solution. Stack: C# WPF, SQL Server scripts, layered Core/Data/App projects, tests and docs.
+WPF + SQL Server exam-ready application for managing materials. The desktop app uses SQL Server through ADO.NET repositories; the database is created and seeded from `database/sqlserver` scripts.
 
-Run: `dotnet run --project src/BolshayaPachkaMaterials.TestRunner` for tests, open `src/BolshayaPachkaMaterials.sln` for the app. Prepare SQL Server with `database/sqlserver/setup-db.ps1`.
+## Run
 
+```powershell
+powershell -ExecutionPolicy Bypass -File "database\sqlserver\setup-db.ps1"
+dotnet build "src\BolshayaPachkaMaterials.sln"
+dotnet run --project "src\BolshayaPachkaMaterials.TestRunner\BolshayaPachkaMaterials.TestRunner.csproj"
+dotnet run --project "src\BolshayaPachkaMaterials.App\BolshayaPachkaMaterials.App.csproj"
+```
+
+Default SQL Server instance is `.\SQLEXPRESS`; set `SQLSERVER` or `EXAM_CONNECTION_STRING` for another instance.

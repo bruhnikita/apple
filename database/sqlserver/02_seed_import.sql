@@ -104,3 +104,28 @@ INSERT INTO dbo.Material(Title,CountInPack,Unit,CountInStock,MinCount,Descriptio
 INSERT INTO dbo.Material(Title,CountInPack,Unit,CountInStock,MinCount,Description,Cost,Image,MaterialTypeID) SELECT N'Гранулы цветной 3x2',1,N'л',32,45,N'Imported material',28596,N'picture.png',ID FROM dbo.MaterialType WHERE Title=N'Гранулы';
 INSERT INTO dbo.Material(Title,CountInPack,Unit,CountInStock,MinCount,Description,Cost,Image,MaterialTypeID) SELECT N'Нить белый 2x0',2,N'м',623,23,N'Imported material',46684,N'picture.png',ID FROM dbo.MaterialType WHERE Title=N'Краски';
 
+
+INSERT INTO dbo.Supplier(Title, INN, StartDate, QualityRating, SupplierType)
+VALUES (N'Основной поставщик', '1000000000', CAST(GETDATE() AS date), 10, N'local'),
+       (N'Резервный поставщик', '2000000000', CAST(GETDATE() AS date), 8, N'local');
+
+INSERT INTO dbo.MaterialSupplier(MaterialID, SupplierID)
+SELECT m.ID, s.ID
+FROM dbo.Material m
+CROSS JOIN dbo.Supplier s
+WHERE s.Title = N'Основной поставщик';
+
+INSERT INTO dbo.MaterialCountHistory(MaterialID, ChangeDate, CountValue)
+SELECT TOP (12) ID, DATEADD(DAY, -ID, GETDATE()), ISNULL(CountInStock, 0)
+FROM dbo.Material
+ORDER BY ID;
+
+INSERT INTO dbo.ProductType(Title, DefectedPercent) VALUES(N'Демо продукция', 0.01);
+INSERT INTO dbo.Product(Title, ProductTypeID, ArticleNumber, Description, Image, ProductionPersonCount, ProductionWorkshopNumber, MinCostForAgent)
+VALUES(N'Готовое изделие', 1, N'P0001', N'Продукция для проверки зависимостей материалов', N'picture.png', 2, 1, 1000);
+
+INSERT INTO dbo.ProductMaterial(ProductID, MaterialID, Count)
+SELECT TOP (5) 1, ID, 1
+FROM dbo.Material
+ORDER BY ID;
+GO

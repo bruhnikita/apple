@@ -6,23 +6,6 @@
         MinWidth="980" MinHeight="650"
         FontFamily="Segoe UI"
         Background="White">
-    <Window.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Padding" Value="14,8"/>
-            <Setter Property="Margin" Value="6,0,0,0"/>
-            <Setter Property="FontSize" Value="15"/>
-        </Style>
-        <Style TargetType="ComboBox">
-            <Setter Property="Height" Value="48"/>
-            <Setter Property="FontSize" Value="18"/>
-            <Setter Property="Padding" Value="10,6"/>
-        </Style>
-        <Style TargetType="TextBox">
-            <Setter Property="Height" Value="48"/>
-            <Setter Property="FontSize" Value="18"/>
-            <Setter Property="Padding" Value="12,8"/>
-        </Style>
-    </Window.Resources>
     <DockPanel Margin="28">
         <Grid DockPanel.Dock="Top" Margin="0,0,0,26">
             <Grid.ColumnDefinitions>
@@ -31,45 +14,30 @@
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Column="0"
-                     ToolTip="Введите для поиска"
-                     Text="{Binding Search, UpdateSourceTrigger=PropertyChanged}"/>
-            <ComboBox Grid.Column="1" Margin="24,0,0,0"
-                      ItemsSource="{Binding Sorts}"
-                      SelectedItem="{Binding SelectedSort}"/>
-            <ComboBox Grid.Column="2" Margin="24,0,0,0"
-                      ItemsSource="{Binding Types}"
-                      SelectedItem="{Binding SelectedType}"/>
+            <TextBox Grid.Column="0" Height="48" FontSize="18" Padding="12,8" ToolTip="Введите для поиска" Text="{Binding Search, UpdateSourceTrigger=PropertyChanged}"/>
+            <ComboBox Grid.Column="1" Height="48" FontSize="18" Margin="24,0,0,0" ItemsSource="{Binding Sorts}" SelectedItem="{Binding SelectedSort}"/>
+            <ComboBox Grid.Column="2" Height="48" FontSize="18" Margin="24,0,0,0" ItemsSource="{Binding Types}" SelectedItem="{Binding SelectedType}"/>
             <StackPanel Grid.Column="3" Margin="18,0,0,0" Orientation="Horizontal">
-                <Button Content="Добавить" Command="{Binding AddCommand}"/>
-                <Button Content="Изменить" Command="{Binding EditCommand}"/>
-                <Button Content="Удалить" Command="{Binding DeleteCommand}"/>
-                <Button Content="Сбросить данные" Command="{Binding ResetCommand}"/>
+                <Button Content="Добавить" Command="{Binding AddCommand}" Padding="12,8"/>
+                <Button Content="Изменить" Command="{Binding EditCommand}" Padding="12,8" Margin="6,0,0,0"/>
+                <Button Content="Удалить" Command="{Binding DeleteCommand}" Padding="12,8" Margin="6,0,0,0"/>
+                <Button Content="Обновить" Command="{Binding RefreshCommand}" Padding="12,8" Margin="6,0,0,0"/>
             </StackPanel>
         </Grid>
-
         <Grid DockPanel.Dock="Bottom" Margin="0,18,0,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" FontSize="16" Text="Минимальное количество:"/>
                 <TextBox Width="100" Margin="10,0,0,0" Height="36" FontSize="15" Text="{Binding MassValue}"/>
-                <Button Content="Изменить у выбранных" Command="{Binding MassCommand}"/>
+                <Button Content="Изменить у выбранных" Command="{Binding MassCommand}" Padding="12,7" Margin="8,0,0,0"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Content="&lt;" Command="{Binding PrevCommand}"/>
-                <TextBlock MinWidth="170" TextAlignment="Center" FontSize="18" VerticalAlignment="Center" Text="{Binding Counter}"/>
-                <Button Content="&gt;" Command="{Binding NextCommand}"/>
+                <Button Content="&lt;" Command="{Binding PrevCommand}" Padding="14,7"/>
+                <TextBlock MinWidth="190" TextAlignment="Center" FontSize="18" VerticalAlignment="Center" Text="{Binding Counter}"/>
+                <Button Content="&gt;" Command="{Binding NextCommand}" Padding="14,7"/>
             </StackPanel>
         </Grid>
-
-        <ListView x:Name="MaterialsList"
-                  BorderThickness="0"
-                  SelectionMode="Extended"
-                  ItemsSource="{Binding PageItems}"
-                  SelectedItem="{Binding Selected}">
+        <ListView x:Name="MaterialsList" BorderThickness="0" SelectionMode="Extended" ItemsSource="{Binding PageItems}" SelectedItem="{Binding Selected}">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -81,47 +49,20 @@
                 <DataTemplate>
                     <Border BorderBrush="#111" BorderThickness="1.2" Background="{Binding Highlight}" Padding="22">
                         <Grid MinHeight="132">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="260"/>
-                            </Grid.ColumnDefinitions>
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="150"/><ColumnDefinition Width="*"/><ColumnDefinition Width="260"/></Grid.ColumnDefinitions>
                             <Border Width="118" Height="92" BorderBrush="#222" BorderThickness="2" Background="#f7f7f7" HorizontalAlignment="Left" VerticalAlignment="Center">
                                 <Image Source="resources/picture.png" Stretch="Uniform" Margin="8"/>
                             </Border>
                             <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                                <TextBlock FontSize="27" FontWeight="SemiBold" TextWrapping="Wrap">
-                                    <Run Text="{Binding Type}"/>
-                                    <Run Text=" | "/>
-                                    <Run Text="{Binding Title}"/>
-                                </TextBlock>
-                                <TextBlock FontSize="20" Margin="0,8,0,0">
-                                    <Run Text="Минимальное количество: "/>
-                                    <Run Text="{Binding MinCount, StringFormat={}{0:N0}}"/>
-                                    <Run Text=" "/>
-                                    <Run Text="{Binding Unit}"/>
-                                </TextBlock>
-                                <TextBlock FontSize="20" TextWrapping="Wrap" Margin="0,6,0,0">
-                                    <Run FontWeight="Bold" Text="Поставщики: "/>
-                                    <Run Text="{Binding Suppliers}"/>
-                                </TextBlock>
+                                <TextBlock FontSize="27" FontWeight="SemiBold" TextWrapping="Wrap"><Run Text="{Binding Type}"/><Run Text=" | "/><Run Text="{Binding Title}"/></TextBlock>
+                                <TextBlock FontSize="20" Margin="0,8,0,0"><Run Text="Минимальное количество: "/><Run Text="{Binding MinCount, StringFormat={}{0:N0}, Mode=OneWay}"/><Run Text=" "/><Run Text="{Binding Unit}"/></TextBlock>
+                                <TextBlock FontSize="20" TextWrapping="Wrap" Margin="0,6,0,0"><Run FontWeight="Bold" Text="Поставщики: "/><Run Text="{Binding Suppliers}"/></TextBlock>
                                 <TextBlock FontSize="14" Foreground="#555" TextWrapping="Wrap" Margin="0,6,0,0" Text="{Binding Description}"/>
                             </StackPanel>
                             <StackPanel Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center">
-                                <TextBlock FontSize="24" TextAlignment="Right">
-                                    <Run Text="Остаток: "/>
-                                    <Run Text="{Binding CountInStock, StringFormat={}{0:N0}}"/>
-                                    <Run Text=" "/>
-                                    <Run Text="{Binding Unit}"/>
-                                </TextBlock>
-                                <TextBlock FontSize="18" TextAlignment="Right" Margin="0,10,0,0">
-                                    <Run Text="Цена: "/>
-                                    <Run Text="{Binding Cost, StringFormat={}{0:N2}}"/>
-                                </TextBlock>
-                                <TextBlock FontSize="16" TextAlignment="Right" Foreground="#444">
-                                    <Run Text="Мин. закупка: "/>
-                                    <Run Text="{Binding RequiredCost, StringFormat={}{0:N2}, Mode=OneWay}"/>
-                                </TextBlock>
+                                <TextBlock FontSize="24" TextAlignment="Right"><Run Text="Остаток: "/><Run Text="{Binding CountInStock, StringFormat={}{0:N0}, Mode=OneWay}"/><Run Text=" "/><Run Text="{Binding Unit}"/></TextBlock>
+                                <TextBlock FontSize="18" TextAlignment="Right" Margin="0,10,0,0"><Run Text="Цена: "/><Run Text="{Binding Cost, StringFormat={}{0:N2}, Mode=OneWay}"/></TextBlock>
+                                <TextBlock FontSize="16" TextAlignment="Right" Foreground="#444"><Run Text="Мин. закупка: "/><Run Text="{Binding RequiredCost, StringFormat={}{0:N2}, Mode=OneWay}"/></TextBlock>
                             </StackPanel>
                         </Grid>
                     </Border>
@@ -130,4 +71,3 @@
         </ListView>
     </DockPanel>
 </Window>
-

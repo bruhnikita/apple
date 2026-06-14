@@ -1,0 +1,65 @@
+﻿<Window x:Class="Exam.App.MaterialEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Материал"
+        Width="620" Height="720"
+        WindowStartupLocation="CenterOwner"
+        FontFamily="Segoe UI">
+    <ScrollViewer Margin="20">
+        <StackPanel>
+            <TextBlock Text="Наименование" FontWeight="SemiBold"/>
+            <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" Margin="0,4,0,12"/>
+            <TextBlock Text="Тип материала" FontWeight="SemiBold"/>
+            <ComboBox ItemsSource="{Binding Types}" SelectedValue="{Binding Material.MaterialTypeId}" SelectedValuePath="Id" DisplayMemberPath="Title" Margin="0,4,0,12"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <TextBlock Text="Остаток" FontWeight="SemiBold"/>
+                    <TextBox Text="{Binding CountInStock}" Margin="0,4,0,12"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="Минимум" FontWeight="SemiBold"/>
+                    <TextBox Text="{Binding MinCount}" Margin="0,4,0,12"/>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <TextBlock Text="Цена" FontWeight="SemiBold"/>
+                    <TextBox Text="{Binding Cost}" Margin="0,4,0,12"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="В упаковке" FontWeight="SemiBold"/>
+                    <TextBox Text="{Binding CountInPack}" Margin="0,4,0,12"/>
+                </StackPanel>
+                <StackPanel Grid.Column="4">
+                    <TextBlock Text="Ед. изм." FontWeight="SemiBold"/>
+                    <TextBox Text="{Binding Unit}" Margin="0,4,0,12"/>
+                </StackPanel>
+            </Grid>
+            <TextBlock Text="Поставщики через запятую" FontWeight="SemiBold"/>
+            <TextBox Text="{Binding Suppliers, UpdateSourceTrigger=PropertyChanged}" Margin="0,4,0,12"/>
+            <TextBlock Text="Описание" FontWeight="SemiBold"/>
+            <TextBox Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" Height="90" TextWrapping="Wrap" Margin="0,4,0,12"/>
+            <TextBlock Text="Изображение" FontWeight="SemiBold"/>
+            <DockPanel Margin="0,4,0,18">
+                <Button DockPanel.Dock="Right" Content="Заменить" Click="PickImage_Click" Padding="12,6"/>
+                <TextBox Text="{Binding Image}" Margin="0,0,10,0"/>
+            </DockPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Сохранить" IsDefault="True" Click="Save_Click" Padding="18,8"/>
+                <Button Content="Отмена" IsCancel="True" Margin="10,0,0,0" Padding="18,8"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>
