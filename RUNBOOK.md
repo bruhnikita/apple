@@ -13,6 +13,15 @@ cd apple
 
 If Git asks for credentials, use GitHub username `bruhnikita`. For the password field use a GitHub token, not the account password. If Git Credential Manager opens a browser, finish the browser login and repeat the clone if needed.
 
+## Optional cleanup after cloning
+
+If you want to remove this helper file from the local exam folder after cloning, run:
+
+```bash
+rm RUNBOOK.md
+```
+
+This only removes the local instruction file. It does not affect GitHub.
 ## 2. Check tools
 
 ```bash
@@ -81,3 +90,5 @@ dotnet run --project "C:\ExamDemo\apple\src\BolshayaPachkaMaterials.TestRunner\B
 powershell -ExecutionPolicy Bypass -File "C:\ExamDemo\apple\database\sqlserver\setup-db.ps1"
 dotnet run --project "C:\ExamDemo\apple\src\BolshayaPachkaMaterials.App\BolshayaPachkaMaterials.App.csproj"
 ```
+
+
