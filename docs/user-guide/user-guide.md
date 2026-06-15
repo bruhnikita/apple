@@ -1,15 +1,15 @@
-﻿# User guide - materials
+﻿# Руководство пользователя — материалы
 
-1. Run `database/sqlserver/setup-db.ps1` to create and seed SQL Server database.
-2. Start the app from `src/BolshayaPachkaMaterials.App`.
-3. Use the top search field to search by material name and description.
-4. Use sorting to order by name, stock, or cost.
-5. Use filtering to select one material type; `Все типы` shows all records.
-6. The bottom counter shows how many records are displayed from the filtered total.
-7. Use page buttons to move through the list; each page shows 15 records.
-8. Low stock materials are highlighted red; high stock materials are highlighted yellow.
-9. Select records and use the mass update panel to change minimum count in SQL Server.
-10. Add/Edit opens a form with material fields, suppliers and image replacement.
-11. Delete removes supplier/history dependencies and blocks deletion when the material is used by a product.
-12. Missing images use `resources/picture.png`.
-13. Use `Обновить` to reload records from SQL Server after external database changes.
+1. Запусти `database/sqlserver/setup-db.ps1`, чтобы создать и заполнить базу SQL Server.
+2. Запусти приложение из проекта `src/BolshayaPachkaMaterials.App`.
+3. Используй верхнее поле поиска для поиска по названию и описанию материала.
+4. Используй сортировку, чтобы упорядочить список по названию, остатку или стоимости.
+5. Используй фильтр, чтобы выбрать один тип материала; пункт `Все типы` показывает все записи.
+6. Нижний счётчик показывает, сколько записей отображается из найденного количества.
+7. Используй кнопки страниц для перехода по списку; на одной странице отображается 15 записей.
+8. Материалы с остатком меньше минимума подсвечиваются красным, с большим запасом — жёлтым.
+9. Выдели записи и используй панель массового обновления, чтобы изменить минимальный остаток в SQL Server.
+10. Кнопки `Добавить` и `Изменить` открывают форму с полями материала, поставщиками и заменой изображения.
+11. Удаление очищает связи с поставщиками и историю, но блокируется, если материал используется в продукции.
+12. Если изображение отсутствует, используется файл `resources/picture.png`.
+13. Кнопка `Обновить` заново загружает записи из SQL Server после внешних изменений базы.

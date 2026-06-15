@@ -1,16 +1,16 @@
 ﻿@startuml
 left to right direction
-actor Operator
-rectangle "Materials application" {
-  Operator -- (View materials)
-  Operator -- (Search by title and description)
-  Operator -- (Sort by title, stock, cost)
-  Operator -- (Filter by material type)
-  Operator -- (Add material)
-  Operator -- (Edit material and suppliers)
-  Operator -- (Replace material image)
-  Operator -- (Bulk update minimum count)
-  Operator -- (Calculate required purchase cost)
-  Operator -- (Delete with dependency rules)
+actor "Оператор" as Operator
+rectangle "Приложение учёта материалов" {
+  Operator -- (Просмотр материалов)
+  Operator -- (Поиск по названию и описанию)
+  Operator -- (Сортировка по названию, остатку и стоимости)
+  Operator -- (Фильтр по типу материала)
+  Operator -- (Добавление материала)
+  Operator -- (Редактирование материала и поставщиков)
+  Operator -- (Замена изображения материала)
+  Operator -- (Массовое изменение минимального остатка)
+  Operator -- (Расчёт стоимости закупки)
+  Operator -- (Удаление с проверкой зависимостей)
 }
 @enduml

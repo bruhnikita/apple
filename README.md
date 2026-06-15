@@ -1,8 +1,8 @@
 ﻿# Apple
 
-WPF + SQL Server exam-ready application for managing materials. The desktop app uses SQL Server through ADO.NET repositories; the database is created and seeded from `database/sqlserver` scripts.
+Готовое WPF-приложение с SQL Server для учёта материалов. Приложение работает с базой через ADO.NET-репозитории, а база данных создаётся и заполняется скриптами из папки `database/sqlserver`.
 
-## Run
+## Быстрый запуск
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File "database\sqlserver\setup-db.ps1"
@@ -11,4 +11,15 @@ dotnet run --project "src\BolshayaPachkaMaterials.TestRunner\BolshayaPachkaMater
 dotnet run --project "src\BolshayaPachkaMaterials.App\BolshayaPachkaMaterials.App.csproj"
 ```
 
-Default SQL Server instance is `.\SQLEXPRESS`; set `SQLSERVER` or `EXAM_CONNECTION_STRING` for another instance.
+По умолчанию используется экземпляр SQL Server `.\SQLEXPRESS`. Для другого экземпляра задай переменную `SQLSERVER` или полную строку подключения `EXAM_CONNECTION_STRING`.
+
+## Что есть в проекте
+
+- Просмотр, поиск, сортировка, фильтрация и постраничный вывод материалов.
+- Добавление, редактирование, удаление и замена изображения материала.
+- Массовое изменение минимального остатка выбранных материалов.
+- Подсветка недостаточного и избыточного остатка.
+- Расчёт стоимости закупки до минимального остатка.
+- Работа с поставщиками, историей остатков и зависимостями от продукции.
+- Документация, тест-кейсы, ERD и диаграмма вариантов использования в папке `docs`.
+

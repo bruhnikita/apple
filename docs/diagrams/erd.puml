@@ -1,5 +1,5 @@
 ﻿@startuml
-entity Material {
+entity "Материал" as Material {
   * ID : int
   --
   Title : nvarchar
@@ -8,35 +8,35 @@ entity Material {
   Cost : decimal
   MaterialTypeID : int
 }
-entity MaterialType {
+entity "Тип материала" as MaterialType {
   * ID : int
   --
   Title : nvarchar
   DefectedPercent : float
 }
-entity Supplier {
+entity "Поставщик" as Supplier {
   * ID : int
   --
   Title : nvarchar
   INN : varchar
 }
-entity MaterialSupplier {
+entity "Связь материал-поставщик" as MaterialSupplier {
   * MaterialID : int
   * SupplierID : int
 }
-entity MaterialCountHistory {
+entity "История остатков" as MaterialCountHistory {
   * ID : int
   --
   MaterialID : int
   ChangeDate : datetime
   CountValue : float
 }
-entity Product {
+entity "Продукция" as Product {
   * ID : int
   --
   Title : nvarchar
 }
-entity ProductMaterial {
+entity "Материалы продукции" as ProductMaterial {
   * ProductID : int
   * MaterialID : int
   Count : float

@@ -1,18 +1,18 @@
-﻿# Test cases - materials
+﻿# Тест-кейсы — материалы
 
-| ID | Scenario | Steps | Expected result |
+| ID | Сценарий | Действия | Ожидаемый результат |
 |---|---|---|---|
-| TC-01 | Database setup | Run `setup-db.ps1` | SQL Server database is created and seeded |
-| TC-02 | Open list | Start the app after DB setup | Material list opens from SQL Server, 15 records per page |
-| TC-03 | Search | Enter part of material name or description | Only matching materials remain; counter changes |
-| TC-04 | Sort by name | Select name sort | Materials are ordered by title |
-| TC-05 | Sort by stock | Select stock sort | Materials are ordered by CountInStock |
-| TC-06 | Sort by cost | Select cost sort | Materials are ordered by Cost |
-| TC-07 | Filter by type | Select a material type | Only materials of selected type are shown; All types resets filter |
-| TC-08 | Combined search/sort/filter | Apply filter, then search, then sort | All operations work together |
-| TC-09 | Highlight low stock | Find item where CountInStock < MinCount | Card background is #f19292 |
-| TC-10 | Highlight high stock | Find item where CountInStock >= MinCount * 3 | Card background is #ffba01 |
-| TC-11 | Mass min count update | Select rows, enter value, click update | Selected MinCount values are updated in SQL Server and history rows are added |
-| TC-12 | Add/edit material | Use Add or Edit and save | Material row and supplier links are saved in SQL Server |
-| TC-13 | Replace image | Use image replacement in edit form | Selected file is copied to resources/images and relative path is saved |
-| TC-14 | Delete rule | Delete material with ProductMaterial dependency | Deletion is blocked; materials without product dependency delete related suppliers/history first |
+| TC-01 | Развёртывание базы | Запустить `setup-db.ps1` | База SQL Server создана и заполнена начальными данными |
+| TC-02 | Открытие списка | Запустить приложение после развёртывания БД | Открывается список материалов из SQL Server, по 15 записей на странице |
+| TC-03 | Поиск | Ввести часть названия или описания материала | Остаются только подходящие материалы, счётчик меняется |
+| TC-04 | Сортировка по названию | Выбрать сортировку по названию | Материалы упорядочены по названию |
+| TC-05 | Сортировка по остатку | Выбрать сортировку по остатку | Материалы упорядочены по количеству на складе |
+| TC-06 | Сортировка по стоимости | Выбрать сортировку по стоимости | Материалы упорядочены по стоимости |
+| TC-07 | Фильтр по типу | Выбрать тип материала | Показаны только материалы выбранного типа; `Все типы` сбрасывает фильтр |
+| TC-08 | Совместная работа поиска, фильтра и сортировки | Применить фильтр, затем поиск, затем сортировку | Все операции работают одновременно |
+| TC-09 | Подсветка малого остатка | Найти материал, где `CountInStock < MinCount` | Карточка подсвечена цветом `#f19292` |
+| TC-10 | Подсветка большого остатка | Найти материал, где `CountInStock >= MinCount * 3` | Карточка подсвечена цветом `#ffba01` |
+| TC-11 | Массовое изменение минимума | Выбрать записи, ввести значение, нажать обновление | У выбранных материалов обновлён `MinCount`, в SQL Server добавлены записи истории |
+| TC-12 | Добавление и редактирование | Использовать `Добавить` или `Изменить`, затем сохранить | Материал и связи с поставщиками сохранены в SQL Server |
+| TC-13 | Замена изображения | Выбрать файл изображения в форме редактирования | Файл скопирован в `resources/images`, относительный путь сохранён в базе |
+| TC-14 | Правило удаления | Удалить материал, который используется в `ProductMaterial` | Удаление заблокировано; материал без зависимости удаляет связанные поставщики и историю |
