@@ -1,4 +1,6 @@
-﻿CREATE OR ALTER VIEW dbo.vMaterialList AS
+﻿USE [BolshayaPachkaMaterials];
+GO
+CREATE OR ALTER VIEW dbo.vMaterialList AS
 SELECT
     m.*,
     mt.Title AS MaterialTypeTitle,
@@ -14,3 +16,4 @@ SELECT
 FROM dbo.Material m
 JOIN dbo.MaterialType mt ON mt.ID = m.MaterialTypeID;
 GO
+

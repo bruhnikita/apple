@@ -1,10 +1,128 @@
-%PDF-1.1
-1 0 obj<</Type/Catalog/Pages 2 0 R>>endobj
-2 0 obj<</Type/Pages/Count 1/Kids[3 0 R]>>endobj
-3 0 obj<</Type/Page/Parent 2 0 R/MediaBox[0 0 612 792]/Contents 4 0 R/Resources<</Font<</F1 5 0 R>>>>>>endobj
-4 0 obj<</Length 72>>stream
-BT /F1 16 Tf 72 720 Td (Use Case diagram) Tj 0 -24 Td (See PlantUML source in this folder.) Tj ET
-endstream endobj
-5 0 obj<</Type/Font/Subtype/Type1/BaseFont/Helvetica>>endobj
-trailer<</Root 1 0 R>>
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 842 595] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Length 3020 >>
+stream
+BT /F2 18 Tf 36 558 Td (Use Case - Materials module) Tj ET
+1 w 0 0 0 RG 95 343 10 0 360 arc S
+95 333 m 95 305 l S
+71 323 m 119 323 l S
+95 305 m 75 281 l S
+95 305 m 115 281 l S
+BT /F2 9 Tf 75 261 Td (Operator) Tj ET
+q 0.98 0.98 0.93 rg
+345 440 m
+397,47 440 440 450,07 440 462,5 c
+440 474,93 397,47 485 345 485 c
+292,53 485 250 474,93 250 462,5 c
+250 450,07 292,53 440 345 440 c
+B Q
+BT /F1 8 Tf 264 459,5 Td (View material list) Tj ET
+0.9 w 0.1 0.1 0.1 RG 125 335 m 250 462,5 l S
+q 0.98 0.98 0.93 rg
+345 370 m
+397,47 370 440 380,07 440 392,5 c
+440 404,93 397,47 415 345 415 c
+292,53 415 250 404,93 250 392,5 c
+250 380,07 292,53 370 345 370 c
+B Q
+BT /F1 8 Tf 264 389,5 Td (Search filter sort) Tj ET
+0.9 w 0.1 0.1 0.1 RG 125 335 m 250 392,5 l S
+q 0.98 0.98 0.93 rg
+345 300 m
+397,47 300 440 310,07 440 322,5 c
+440 334,93 397,47 345 345 345 c
+292,53 345 250 334,93 250 322,5 c
+250 310,07 292,53 300 345 300 c
+B Q
+BT /F1 8 Tf 264 319,5 Td (Add or edit material) Tj ET
+0.9 w 0.1 0.1 0.1 RG 125 335 m 250 322,5 l S
+q 0.98 0.98 0.93 rg
+345 230 m
+397,47 230 440 240,07 440 252,5 c
+440 264,93 397,47 275 345 275 c
+292,53 275 250 264,93 250 252,5 c
+250 240,07 292,53 230 345 230 c
+B Q
+BT /F1 8 Tf 264 249,5 Td (Replace material image) Tj ET
+0.9 w 0.1 0.1 0.1 RG 125 335 m 250 252,5 l S
+q 0.98 0.98 0.93 rg
+635 440 m
+692,99 440 740 450,07 740 462,5 c
+740 474,93 692,99 485 635 485 c
+577,01 485 530 474,93 530 462,5 c
+530 450,07 577,01 440 635 440 c
+B Q
+BT /F1 8 Tf 544 459,5 Td (Bulk update MinCount) Tj ET
+0.9 w 0.1 0.1 0.1 RG 125 335 m 530 462,5 l S
+q 0.98 0.98 0.93 rg
+635 370 m
+692,99 370 740 380,07 740 392,5 c
+740 404,93 692,99 415 635 415 c
+577,01 415 530 404,93 530 392,5 c
+530 380,07 577,01 370 635 370 c
+B Q
+BT /F1 8 Tf 544 389,5 Td (Delete with dependency checks) Tj ET
+0.9 w 0.1 0.1 0.1 RG 125 335 m 530 392,5 l S
+q 0.98 0.98 0.93 rg
+635 300 m
+692,99 300 740 310,07 740 322,5 c
+740 334,93 692,99 345 635 345 c
+577,01 345 530 334,93 530 322,5 c
+530 310,07 577,01 300 635 300 c
+B Q
+BT /F1 8 Tf 544 319,5 Td (Calculate purchase cost) Tj ET
+0.9 w 0.1 0.1 0.1 RG 125 335 m 530 322,5 l S
+q 0.98 0.98 0.93 rg
+635 230 m
+692,99 230 740 240,07 740 252,5 c
+740 264,93 692,99 275 635 275 c
+577,01 275 530 264,93 530 252,5 c
+530 240,07 577,01 230 635 230 c
+B Q
+BT /F1 8 Tf 544 249,5 Td (Refresh from SQL Server) Tj ET
+0.9 w 0.1 0.1 0.1 RG 125 335 m 530 252,5 l S
+q 0.94 0.97 1 rg 360 70 170 65 re f Q
+1.2 w 0.16 0.24 0.34 RG 360 70 170 65 re S
+BT /F2 10 Tf 368 118 Td (SQL Server) Tj ET
+0.5 w 0.55 0.6 0.65 RG 366 110 m 524 110 l S
+BT /F1 8 Tf 368 96 Td (Material tables) Tj ET
+BT /F1 8 Tf 368 84 Td (Supplier links) Tj ET
+BT /F1 8 Tf 368 72 Td (History rows) Tj ET
+0.9 w 0.1 0.1 0.1 RG 345 300 m 445 135 l S
+0.9 w 0.1 0.1 0.1 RG 345 230 m 445 135 l S
+0.9 w 0.1 0.1 0.1 RG 635 440 m 445 135 l S
+0.9 w 0.1 0.1 0.1 RG 635 370 m 445 135 l S
+0.9 w 0.1 0.1 0.1 RG 635 300 m 445 135 l S
+0.9 w 0.1 0.1 0.1 RG 635 230 m 445 135 l S
+BT /F1 8 Tf 36 32 Td (Primary source: usecase.puml. User guide and tests: docs/user-guide, docs/testing.) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000000396 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3468
 %%EOF

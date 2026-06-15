@@ -1,10 +1,105 @@
-%PDF-1.1
-1 0 obj<</Type/Catalog/Pages 2 0 R>>endobj
-2 0 obj<</Type/Pages/Count 1/Kids[3 0 R]>>endobj
-3 0 obj<</Type/Page/Parent 2 0 R/MediaBox[0 0 612 792]/Contents 4 0 R/Resources<</Font<</F1 5 0 R>>>>>>endobj
-4 0 obj<</Length 72>>stream
-BT /F1 16 Tf 72 720 Td (ERD diagram) Tj 0 -24 Td (See PlantUML source in this folder.) Tj ET
-endstream endobj
-5 0 obj<</Type/Font/Subtype/Type1/BaseFont/Helvetica>>endobj
-trailer<</Root 1 0 R>>
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 842 595] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Length 2985 >>
+stream
+BT /F2 18 Tf 36 558 Td (ERD - Materials module) Tj ET
+q 0.94 0.97 1 rg 70 390 150 115 re f Q
+1.2 w 0.16 0.24 0.34 RG 70 390 150 115 re S
+BT /F2 10 Tf 78 488 Td (MaterialType) Tj ET
+0.5 w 0.55 0.6 0.65 RG 76 480 m 214 480 l S
+BT /F1 8 Tf 78 466 Td (ID PK) Tj ET
+BT /F1 8 Tf 78 454 Td (Title) Tj ET
+BT /F1 8 Tf 78 442 Td (DefectedPercent) Tj ET
+q 0.94 0.97 1 rg 300 365 190 145 re f Q
+1.2 w 0.16 0.24 0.34 RG 300 365 190 145 re S
+BT /F2 10 Tf 308 493 Td (Material) Tj ET
+0.5 w 0.55 0.6 0.65 RG 306 485 m 484 485 l S
+BT /F1 8 Tf 308 471 Td (ID PK) Tj ET
+BT /F1 8 Tf 308 459 Td (Title) Tj ET
+BT /F1 8 Tf 308 447 Td (CountInPack) Tj ET
+BT /F1 8 Tf 308 435 Td (Unit) Tj ET
+BT /F1 8 Tf 308 423 Td (CountInStock) Tj ET
+BT /F1 8 Tf 308 411 Td (MinCount) Tj ET
+BT /F1 8 Tf 308 399 Td (Cost) Tj ET
+BT /F1 8 Tf 308 387 Td (MaterialTypeID FK) Tj ET
+q 0.94 0.97 1 rg 585 405 150 100 re f Q
+1.2 w 0.16 0.24 0.34 RG 585 405 150 100 re S
+BT /F2 10 Tf 593 488 Td (Supplier) Tj ET
+0.5 w 0.55 0.6 0.65 RG 591 480 m 729 480 l S
+BT /F1 8 Tf 593 466 Td (ID PK) Tj ET
+BT /F1 8 Tf 593 454 Td (Title) Tj ET
+BT /F1 8 Tf 593 442 Td (INN) Tj ET
+BT /F1 8 Tf 593 430 Td (QualityRating) Tj ET
+q 0.94 0.97 1 rg 585 270 150 80 re f Q
+1.2 w 0.16 0.24 0.34 RG 585 270 150 80 re S
+BT /F2 10 Tf 593 333 Td (MaterialSupplier) Tj ET
+0.5 w 0.55 0.6 0.65 RG 591 325 m 729 325 l S
+BT /F1 8 Tf 593 311 Td (MaterialID PK/FK) Tj ET
+BT /F1 8 Tf 593 299 Td (SupplierID PK/FK) Tj ET
+q 0.94 0.97 1 rg 300 170 190 85 re f Q
+1.2 w 0.16 0.24 0.34 RG 300 170 190 85 re S
+BT /F2 10 Tf 308 238 Td (MaterialCountHistory) Tj ET
+0.5 w 0.55 0.6 0.65 RG 306 230 m 484 230 l S
+BT /F1 8 Tf 308 216 Td (ID PK) Tj ET
+BT /F1 8 Tf 308 204 Td (MaterialID FK) Tj ET
+BT /F1 8 Tf 308 192 Td (ChangeDate) Tj ET
+BT /F1 8 Tf 308 180 Td (CountValue) Tj ET
+q 0.94 0.97 1 rg 70 165 150 105 re f Q
+1.2 w 0.16 0.24 0.34 RG 70 165 150 105 re S
+BT /F2 10 Tf 78 253 Td (Product) Tj ET
+0.5 w 0.55 0.6 0.65 RG 76 245 m 214 245 l S
+BT /F1 8 Tf 78 231 Td (ID PK) Tj ET
+BT /F1 8 Tf 78 219 Td (Title) Tj ET
+BT /F1 8 Tf 78 207 Td (ArticleNumber) Tj ET
+BT /F1 8 Tf 78 195 Td (MinCostForAgent) Tj ET
+q 0.94 0.97 1 rg 300 55 190 80 re f Q
+1.2 w 0.16 0.24 0.34 RG 300 55 190 80 re S
+BT /F2 10 Tf 308 118 Td (ProductMaterial) Tj ET
+0.5 w 0.55 0.6 0.65 RG 306 110 m 484 110 l S
+BT /F1 8 Tf 308 96 Td (ProductID PK/FK) Tj ET
+BT /F1 8 Tf 308 84 Td (MaterialID PK/FK) Tj ET
+BT /F1 8 Tf 308 72 Td (Count) Tj ET
+0.9 w 0.1 0.1 0.1 RG 220 447 m 300 437 l S
+BT /F1 7 Tf 240 446 Td (1..*) Tj ET
+0.9 w 0.1 0.1 0.1 RG 490 410 m 585 310 l S
+BT /F1 7 Tf 517,5 364 Td (M:N) Tj ET
+0.9 w 0.1 0.1 0.1 RG 660 405 m 660 350 l S
+BT /F1 7 Tf 640 381,5 Td (1..*) Tj ET
+0.9 w 0.1 0.1 0.1 RG 395 365 m 395 255 l S
+BT /F1 7 Tf 375 314 Td (1..*) Tj ET
+0.9 w 0.1 0.1 0.1 RG 220 217 m 300 95 l S
+BT /F1 7 Tf 240 160 Td (1..*) Tj ET
+0.9 w 0.1 0.1 0.1 RG 395 365 m 395 135 l S
+BT /F1 7 Tf 375 254 Td (1..*) Tj ET
+BT /F1 8 Tf 36 32 Td (Primary source: erd.puml. Database scripts: database/sqlserver/*.sql) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000000396 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3433
 %%EOF
